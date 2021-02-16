@@ -18,12 +18,6 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="camera_1">
-  <mu1>${standard_friction}</mu1>
-  <mu2>${standard_friction}</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
-
 <gazebo reference="ball_caster_1">
   <mu1>${no_friction}</mu1>
   <mu2>${no_friction}</mu2>

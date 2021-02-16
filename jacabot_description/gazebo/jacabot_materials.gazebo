@@ -15,10 +15,6 @@
   <material>${sensor_color}</material>
 </gazebo>
 
-<gazebo reference="camera_1">
-  <material>${sensor_color}</material>
-</gazebo>
-
 <gazebo reference="ball_caster_1">
   <material>${body_color}</material>
 </gazebo>

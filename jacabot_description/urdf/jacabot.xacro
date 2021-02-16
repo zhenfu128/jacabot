@@ -51,27 +51,6 @@
   </collision>
 </link>
 
-<link name="camera_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.12634700304799204 -1.974392276160586e-06 -0.009854874590947638"/>
-    <mass value="0.019704304487308463"/>
-    <inertia ixx="1e-06" ixy="-0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="-0.12 -0.0 -0.10025"/>
-    <geometry>
-      <mesh filename="package://jacabot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <!-- <material name="silver"/> -->
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="-0.12 -0.0 -0.10025"/>
-    <geometry>
-      <mesh filename="package://jacabot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
 <link name="ball_caster_1">
   <inertial>
     <origin rpy="0 0 0" xyz="0.10500005407994323 1.3527168229998665e-07 -0.017781235122917446"/>
@@ -139,12 +118,6 @@
   <origin rpy="0 0 0" xyz="0.048389 0.0 0.10325"/>
   <parent link="base_link"/>
   <child link="lidar_1"/>
-</joint>
-
-<joint name="camera_fix" type="fixed">
-  <origin rpy="0 0 0" xyz="0.12 0.0 0.10025"/>
-  <parent link="base_link"/>
-  <child link="camera_1"/>
 </joint>
 
 <joint name="caster_fix" type="fixed">
