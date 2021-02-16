@@ -9,7 +9,7 @@ xacro
 )
 
 catkin_package(
-CATKIN_DEPENDS rospy urdf xacro 
+CATKIN_DEPENDS rospy urdf xacro
 )
 
 include_directories(

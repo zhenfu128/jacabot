@@ -9,19 +9,18 @@
 <xacro:include filename="$(find jacabot_description)/gazebo/jacabot_materials.gazebo" />
 <xacro:include filename="$(find jacabot_description)/gazebo/jacabot_physics.gazebo" />
 <xacro:include filename="$(find jacabot_description)/gazebo/jacabot_plugins.gazebo" />
-
 <link name="base_link">
   <inertial>
-    <origin rpy="0 0 0" xyz="-2.8129093221422423e-08 -0.015674478682352763 0.07127082907629367"/>
-    <mass value="2.155363502599137"/>
-    <inertia ixx="0.008818" ixy="-0.0" ixz="-0.0" iyy="0.011338" iyz="-3.4e-05" izz="0.015949"/>
+    <origin rpy="0 0 0" xyz="0.015674415828273155 -2.8128980710952588e-08 0.07127070468579294"/>
+    <mass value="2.155372145560495"/>
+    <inertia ixx="0.011338" ixy="0.0" ixz="3.4e-05" iyy="0.008818" iyz="-0.0" izz="0.015949"/>
   </inertial>
   <visual>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <!-- <material name="silver"/> -->
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -33,19 +32,19 @@
 
 <link name="lidar_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="4.522192788972146e-05 0.0022507224363550113 0.04507204964186852"/>
-    <mass value="5.170546565587251"/>
-    <inertia ixx="0.00328" ixy="7e-06" ixz="-3e-06" iyy="0.024601" iyz="-2.8e-05" izz="0.024429"/>
+    <origin rpy="0 0 0" xyz="-0.0022504316269782235 4.50011400247341e-05 0.04507204893353943"/>
+    <mass value="5.170546733650495"/>
+    <inertia ixx="0.024601" ixy="-7e-06" ixz="2.8e-05" iyy="0.003279" iyz="-3e-06" izz="0.024429"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0.0 0.048389 -0.10325"/>
+    <origin rpy="0 0 0" xyz="-0.048389 -0.0 -0.10325"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <!-- <material name="silver"/> -->
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0.0 0.048389 -0.10325"/>
+    <origin rpy="0 0 0" xyz="-0.048389 -0.0 -0.10325"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -54,19 +53,19 @@
 
 <link name="camera_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-1.977677839289423e-06 -0.07634667276257799 -0.009854879487852894"/>
-    <mass value="0.019704301403135695"/>
-    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+    <origin rpy="0 0 0" xyz="0.12634700304799204 -1.974392276160586e-06 -0.009854874590947638"/>
+    <mass value="0.019704304487308463"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="-0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0.0 0.048389 -0.10025"/>
+    <origin rpy="0 0 0" xyz="-0.12 -0.0 -0.10025"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <!-- <material name="silver"/> -->
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0.0 0.048389 -0.10025"/>
+    <origin rpy="0 0 0" xyz="-0.12 -0.0 -0.10025"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -75,19 +74,19 @@
 
 <link name="ball_caster_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="1.3440264421936125e-07 -0.10500005661939853 -0.017781235021511445"/>
-    <mass value="0.11832109459054331"/>
-    <inertia ixx="1.2e-05" ixy="0.0" ixz="-0.0" iyy="1.2e-05" iyz="0.0" izz="1.3e-05"/>
+    <origin rpy="0 0 0" xyz="0.10500005407994323 1.3527168229998665e-07 -0.017781235122917446"/>
+    <mass value="0.11832109888432071"/>
+    <inertia ixx="1.2e-05" ixy="-0.0" ixz="-0.0" iyy="1.2e-05" iyz="-0.0" izz="1.3e-05"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0.0 0.0 -0.03725"/>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.03725"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/ball_caster_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <!-- <material name="silver"/> -->
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0.0 0.0 -0.03725"/>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.03725"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/ball_caster_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -96,19 +95,19 @@
 
 <link name="left_wheel_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="-0.0025245376526800006 -2.6468554383153746e-08 -6.907443367495936e-07"/>
-    <mass value="0.1746608998531855"/>
-    <inertia ixx="0.000254" ixy="0.0" ixz="-0.0" iyy="0.000128" iyz="-0.0" izz="0.000128"/>
+    <origin rpy="0 0 0" xyz="6.89208122124023e-07 -0.0025244883476635005 7.730982640175021e-08"/>
+    <mass value="0.17466089985318492"/>
+    <inertia ixx="0.000128" ixy="0.0" ixz="-0.0" iyy="0.000254" iyz="0.0" izz="0.000128"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="-0.116 -0.0 -0.045"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.116 -0.045"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <!-- <material name="silver"/> -->
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="-0.116 -0.0 -0.045"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.116 -0.045"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -117,19 +116,19 @@
 
 <link name="right_wheel_1">
   <inertial>
-    <origin rpy="0 0 0" xyz="0.0025245376526800006 3.0130693435688574e-08 -6.907443367565325e-07"/>
-    <mass value="0.1746608998531855"/>
-    <inertia ixx="0.000254" ixy="0.0" ixz="0.0" iyy="0.000128" iyz="0.0" izz="0.000128"/>
+    <origin rpy="0 0 0" xyz="-7.943571002755334e-08 0.0025244883476652075 -6.907443368259214e-07"/>
+    <mass value="0.1746608998531851"/>
+    <inertia ixx="0.000128" ixy="0.0" ixz="-0.0" iyy="0.000254" iyz="0.0" izz="0.000128"/>
   </inertial>
   <visual>
-    <origin rpy="0 0 0" xyz="0.116 -0.0 -0.045"/>
+    <origin rpy="0 0 0" xyz="0.0 0.116 -0.045"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <!-- <material name="silver"/> -->
   </visual>
   <collision>
-    <origin rpy="0 0 0" xyz="0.116 -0.0 -0.045"/>
+    <origin rpy="0 0 0" xyz="0.0 0.116 -0.045"/>
     <geometry>
       <mesh filename="package://jacabot_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -137,13 +136,13 @@
 </link>
 
 <joint name="lidar_fix" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0 -0.048389 0.10325"/>
+  <origin rpy="0 0 0" xyz="0.048389 0.0 0.10325"/>
   <parent link="base_link"/>
   <child link="lidar_1"/>
 </joint>
 
 <joint name="camera_fix" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0 -0.048389 0.10025"/>
+  <origin rpy="0 0 0" xyz="0.12 0.0 0.10025"/>
   <parent link="base_link"/>
   <child link="camera_1"/>
 </joint>
@@ -155,17 +154,17 @@
 </joint>
 
 <joint name="left_wheel_joint" type="continuous">
-  <origin rpy="0 0 0" xyz="0.116 0.0 0.045"/>
+  <origin rpy="0 0 0" xyz="0.0 0.116 0.045"/>
   <parent link="base_link"/>
   <child link="left_wheel_1"/>
-  <axis xyz="1.0 -0.0 -0.0"/>
+  <axis xyz="0.0 1.0 -0.0"/>
 </joint>
 
 <joint name="right_wheel_joint" type="continuous">
-  <origin rpy="0 0 0" xyz="-0.116 0.0 0.045"/>
+  <origin rpy="0 0 0" xyz="0.0 -0.116 0.045"/>
   <parent link="base_link"/>
   <child link="right_wheel_1"/>
-  <axis xyz="1.0 0.0 -0.0"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
 </joint>
 
 </robot>
