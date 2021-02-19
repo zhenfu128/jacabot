@@ -1,8 +1,7 @@
-<?xml version="1.0" ?>
 <launch>
   <arg default="$(find jacabot_description)/urdf/jacabot.xacro" name="model"/>
   <arg default="true" name="gui"/>
-  <arg default="$(find jacabot_description)/launch/urdf.rviz" name="rvizconfig"/>
+  <arg default="$(find jacabot_simulation)/launch/urdf.rviz" name="rvizconfig"/>
   <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
   <param name="use_gui" value="$(arg gui)"/>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>

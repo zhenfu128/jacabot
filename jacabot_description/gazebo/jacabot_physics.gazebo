@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="jacabot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="standard_friction" value="1.0" />
+<xacro:property name="standard_friction" value="0.2" />
 <xacro:property name="no_friction" value="0.0" />
 <xacro:property name="wheel_friction" value="10.0" />
 
@@ -12,27 +12,51 @@
   <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="lidar_1">
+<gazebo reference="lidar">
   <mu1>${standard_friction}</mu1>
   <mu2>${standard_friction}</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="ball_caster_1">
+<gazebo reference="front_ball_caster">
   <mu1>${no_friction}</mu1>
   <mu2>${no_friction}</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="left_wheel_1">
+<gazebo reference="left_wheel">
   <mu1>${wheel_friction}</mu1>
   <mu2>${wheel_friction}</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="right_wheel_1">
+<gazebo reference="right_wheel">
   <mu1>${wheel_friction}</mu1>
   <mu2>${wheel_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rear_ball_caster">
+  <mu1>${no_friction}</mu1>
+  <mu2>${no_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="temp_sensor">
+  <mu1>${standard_friction}</mu1>
+  <mu2>${standard_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="gas_sensor">
+  <mu1>${standard_friction}</mu1>
+  <mu2>${standard_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="imu">
+  <mu1>${standard_friction}</mu1>
+  <mu2>${standard_friction}</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 

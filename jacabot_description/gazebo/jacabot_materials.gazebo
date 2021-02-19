@@ -6,25 +6,41 @@
 <xacro:property name="grey_color" value="Gazebo/Grey" />
 <xacro:property name="sensor_color" value="Gazebo/Black" />
 
+
 <gazebo reference="base_link">
   <material>${body_color}</material>
-  <gravity>true</gravity>
 </gazebo>
 
-<gazebo reference="lidar_1">
+<gazebo reference="lidar">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="front_ball_caster">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="left_wheel">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="right_wheel">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="rear_ball_caster">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="temp_sensor">
   <material>${sensor_color}</material>
 </gazebo>
 
-<gazebo reference="ball_caster_1">
-  <material>${body_color}</material>
+<gazebo reference="gas_sensor">
+  <material>${sensor_color}</material>
 </gazebo>
 
-<gazebo reference="left_wheel_1">
-  <material>${wheel_color}</material>
-</gazebo>
-
-<gazebo reference="right_wheel_1">
-  <material>${wheel_color}</material>
+<gazebo reference="imu">
+  <material>${sensor_color}</material>
 </gazebo>
 
 </robot>

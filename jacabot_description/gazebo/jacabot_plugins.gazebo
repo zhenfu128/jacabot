@@ -1,14 +1,13 @@
 <?xml version="1.0" ?>
 <robot name="jacabot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="standard_update_rate" value="10.0" />
-<xacro:property name="sensor_update_rate" value="30.0" />
-<xacro:property name="camera_name" value="jacabot_cam" />
-<xacro:property name="camera_link" value="camera_1" />
-<xacro:property name="camera_frame" value="camera_frame" />
+<xacro:property name="standard_update_rate" value="100.0" />
+<xacro:property name="sensor_update_rate" value="100.0" />
 <xacro:property name="lidar_name" value="jacabot_lidar" />
-<xacro:property name="lidar_link" value="lidar_1" />
-<xacro:property name="lidar_frame" value="lidar_frame" />
+<xacro:property name="lidar_link" value="lidar" />
+<xacro:property name="imu_name" value="jacabot_imu" />
+<xacro:property name="imu_link" value="imu" />
+
 
 <!-- control plugin -->
 <gazebo>
@@ -55,18 +54,17 @@
         <far>3</far>
       </clip>  
     </camera>
-
     <plugin name="${lidar_link}_controller" filename="libgazebo_ros_openni_kinect.so">
       <baseline>0.2</baseline>
       <alwaysOn>true</alwaysOn>
       <updateRate>0.0</updateRate>
       <cameraName>${lidar_name}</cameraName>
-      <imageTopicName>/${lidar_name}/color/image_raw</imageTopicName>
-      <cameraInfoTopicName>/${lidar_name}/color/camera_info</cameraInfoTopicName>
-      <depthImageTopicName>/${lidar_name}/depth/image_raw</depthImageTopicName>
-      <depthImageInfoTopicName>/${lidar_name}/depth/camera_info</depthImageInfoTopicName>
-      <pointCloudTopicName>/${lidar_name}/depth/points</pointCloudTopicName>
-      <frameName>${lidar_frame}</frameName>
+      <imageTopicName>${lidar_name}/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>${lidar_name}/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>${lidar_name}/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>${lidar_name}/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>${lidar_name}/depth/points</pointCloudTopicName>
+      <frameName>${lidar_name}</frameName>
       <pointCloudCutoff>0.5</pointCloudCutoff>
       <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
       <distortionK1>0.00000001</distortionK1>
@@ -82,4 +80,27 @@
     </plugin>
   </sensor>
 </gazebo>
+
+<!-- imu plugin -->
+<gazebo reference="${imu_link}">
+  <gravity>true</gravity>
+  <sensor name="${imu_link}_sensor" type="imu">
+    <always_on>true</always_on>
+    <update_rate>${sensor_update_rate}</update_rate>
+    <visualize>true</visualize>
+    <topic>__default_topic__</topic>
+    <plugin name="${imu_link}_plugin" filename="libgazebo_ros_imu_sensor.so">
+      <topicName>${imu_name}</topicName>
+      <bodyName>${imu_name}</bodyName>
+      <updateRateHZ>10.0</updateRateHZ>
+      <gaussianNoise>0.0</gaussianNoise>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
+      <frameName>${imu_name}</frameName>
+      <initialOrientationAsReference>false</initialOrientationAsReference>
+    </plugin>
+    <pose>0 0 0 0 0 0</pose>
+  </sensor>
+</gazebo>
+
 </robot>

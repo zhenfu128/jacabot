@@ -1,17 +1,5 @@
 <?xml version="1.0" ?>
 <launch>
-       <node pkg="joy" type="joy_node" name="xboxpad" output="screen" >
-           <param name="dev" type="string" value="/dev/input/js0" />
-           <param name="deadzone" value="0.12" />
-           <param name="autorepeat_rate" value="5" />
-       </node>
-       <node pkg="teleop_twist_joy" type="teleop_node" name="teleop_node" output="screen" respawn="false">
-           <param name="enable_button" value="0ros" />
-           <param name="axis_angular" value="1" />  
-       </node>
-</launch>
-
-<launch>
   <arg name="joy_config" default="xbox" />
   <arg name="joy_dev" default="/dev/input/js0" />
   <arg name="config_filepath" default="$(find teleop_twist_joy)/config/$(arg joy_config).config.yaml" />
@@ -24,5 +12,6 @@
 
   <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
     <rosparam command="load" file="$(arg config_filepath)" />
+    <param name="enable_button" value="0" />
   </node>
 </launch>

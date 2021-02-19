@@ -4,8 +4,8 @@ find_package(catkin REQUIRED)
 
 
 find_package(catkin REQUIRED COMPONENTS
-urdf
-xacro
+# urdf
+# xacro
 )
 
 catkin_package(
@@ -16,6 +16,6 @@ include_directories(
 ${catkin_INCLUDE_DIRS}
 )
 
-install(DIRECTORY meshes urdf
+install(DIRECTORY meshes urdf xacro
 DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

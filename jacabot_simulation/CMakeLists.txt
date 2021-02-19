@@ -16,6 +16,6 @@ include_directories(
 ${catkin_INCLUDE_DIRS}
 )
 
-install(DIRECTORY meshes urdf launch worlds
+install(DIRECTORY meshes urdf gazebo launch worlds
 DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

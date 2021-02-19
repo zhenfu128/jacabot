@@ -1,9 +1,8 @@
 teleop:
-  walk:
+  move:
     type: topic
     message_type: geometry_msgs/Twist
     topic_name: /cmd_vel
-    deadman_buttons: [4]
     axis_mappings:
       -
         axis: 1
@@ -19,12 +18,6 @@ teleop:
         target: linear.y
         scale: 0.3
 
-  hello:
-    type: topic
-    message_type: std_msgs/String
-    topic_name: chatter
-    deadman_buttons: [1]
-    message_value:
-      -
-        target: data
-        value: 'Hello'
+    enable_button: 0  # L2 shoulder button
+    enable_turbo_button: 5  # L1 shoulder button
+          
