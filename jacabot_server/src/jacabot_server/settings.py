@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my own apps
-    'sensors',
+     'users.apps.UsersConfig',
+     'pages.apps.PagesConfig',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
