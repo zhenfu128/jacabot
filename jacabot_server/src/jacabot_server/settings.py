@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my own apps
-     'users.apps.UsersConfig',
-     'pages.apps.PagesConfig',
+    'crispy_forms',
+    'users.apps.UsersConfig',
+    'pages.apps.PagesConfig',
+    'contact.apps.ContactConfig',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -120,4 +123,38 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap'
+
+LOGIN_REDIRECT_URL = 'account'
+
+CONTACT_REDIRECT_URL = 'homepage'
+
+
+
+# MESSAGE_TAGS = {
+#     messages.DEBUG: 'alert-info',
+#     messages.INFO: 'alert-info',
+#     messages.SUCCESS: 'alert-success',
+#     messages.WARNING: 'alert-warning',
+#     messages.ERROR: 'alert-danger',
+# }
+
+
+
+############################################################
+# email settings
+DEFAULT_FROM_EMAIL = 'orlamowski.karol@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_HOST = 'smtp.sendgrid.net' # new
+# EMAIL_HOST_USER = 'apikey' # new
+# EMAIL_HOST_PASSWORD = '<sendgrid_password>' # new
+# EMAIL_PORT = 587 # new
+# EMAIL_USE_TLS = True # new
+############################################################

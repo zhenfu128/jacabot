@@ -1,0 +1,46 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+
+{% block content %}  
+{% load crispy_forms_tags %}
+  <!-- <div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <img class="mb-4" src="{% static 'pages/assets/brand/bootstrap-logo.svg' %}" alt="" width="100" height="80">
+        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+        <fieldset class="form-group">
+            {{ form|crispy }}
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit">Login</button>
+        </div>
+    </form>
+  </div> -->
+
+
+  <div class="content-section">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+          {{ form.email|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+          {{ form.password|as_crispy_field }}
+        </div>
+      </div>
+    </form>
+  </div>
+  
+
+{% endblock content %}
+
+
+

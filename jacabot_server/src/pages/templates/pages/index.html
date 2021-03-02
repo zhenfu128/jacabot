@@ -1,13 +1,20 @@
 {% load static %}
 <!doctype html>
+
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <meta name="description" content=""> -->
-    <!-- <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors"> -->
-    <!-- <meta name="generator" content="Hugo 0.80.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+
+    <!-- {% if title %}
+    <title>Jacabot - {{ title }}</title>
+    {% else %} -->
     <title>Jacabot</title>
+    <!-- {% endif %} -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">   
     
     <!-- Bootstrap core CSS -->
 <link href="{% static '/pages/assets/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -37,25 +44,33 @@
   <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0">jacabot</h3>
+          {% if messages %}
+            {%for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="">Home</a>
-        <a class="nav-link" href="login/">Login</a>
-        <a class="nav-link" href="register/">Register</a>
-        <a class="nav-link" href="contact/">Contact</a>
+        <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+        {% if user.is_authenticated %}
+        <a class="nav-link" href="{% url 'account' %}">Account</a>
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <!-- <a class="nav-link" href="{% url 'account' %}">Account</a> -->
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+        {% endif %}
+        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        <a class="nav-link" href="{% url 'about' %}">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="px-3">
-    <h1>Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p>
-  </main>
+  {% block content %} {% endblock content %}
 
   <footer class="mt-auto text-white-50">
-    <p>Copyright <a href="https://karolorlamowski.com/" class="text-white">jacabot</a>, by <a href="" class="text-white">Karol Orlamowski</a>.</p>
+    <p>Copyright <a href="https://jacabot.com" class="text-white">jacabot</a>, by <a href="https://karolorlamowski.com" class="text-white">Karol Orlamowski</a>.</p>
   </footer>
 </div>
 
