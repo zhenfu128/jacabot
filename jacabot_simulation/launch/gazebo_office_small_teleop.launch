@@ -1,0 +1,16 @@
+<launch>
+  <!-- <arg name="gui" default="true"/> -->
+
+  <param command="$(find xacro)/xacro $(find jacabot_description)/urdf/jacabot.xacro" name="robot_description"/>
+  <node args="-param robot_description -urdf -model jacabot" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop"/>
+  <!-- start gazebo world from .world file -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find jacabot_simulation)/worlds/office_small.world"/>
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+</launch>
