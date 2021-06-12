@@ -1,0 +1,4 @@
+<launch>
+ <param command="$(find xacro)/xacro $(find jacabot_description)/urdf/jacabot.xacro" name="robot_description"/>
+    <node type="rviz" name="rviz" pkg="rviz"/>
+</launch>
