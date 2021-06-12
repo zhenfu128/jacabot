@@ -3,3 +3,5 @@ ros-melodic-teleop-twist-joy
 ros-melodic-slam-gmapping
 ros-melodic-rosbridge-server
 ros-melodic-web-video-server
+ros-melodic-pr2-apps
+ros-melodic-pcl-ros
