@@ -3,9 +3,9 @@
 
 <xacro:property name="standard_update_rate" value="100.0" />
 <xacro:property name="sensor_update_rate" value="100.0" />
-<xacro:property name="lidar_name" value="jacabot_lidar" />
+<xacro:property name="lidar_name" value="lidar" />
 <xacro:property name="lidar_link" value="lidar" />
-<xacro:property name="imu_name" value="jacabot_imu" />
+<xacro:property name="imu_name" value="imu" />
 <xacro:property name="imu_link" value="imu" />
 
 

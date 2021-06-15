@@ -8,4 +8,7 @@
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
+  
+  <!-- run rviz  -->
+  <node type="rviz" name="rviz" pkg="rviz"/>  
 </launch>
