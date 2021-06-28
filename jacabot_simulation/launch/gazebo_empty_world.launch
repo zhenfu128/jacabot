@@ -12,3 +12,4 @@
   <!-- run rviz  -->
   <node type="rviz" name="rviz" pkg="rviz"/>  
 </launch>
+
